@@ -9,6 +9,7 @@ namespace Weather.Weatherapi.Clients.Forecast
     {
         private const string Key = "fa8b3df74d4042b9aa7135114252304";
         private const string Host = "http://api.weatherapi.com";
+
         public async Task<WeatherForecastResponseApiData> GetForecast(int dayCount, double lat, double lon, CancellationToken cancellationToken)
         {
             const string Method = "/v1/forecast.json";

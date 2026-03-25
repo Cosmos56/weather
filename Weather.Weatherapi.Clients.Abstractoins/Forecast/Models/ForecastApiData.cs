@@ -8,6 +8,6 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     public class ForecastApiData
     {
         [JsonProperty("forecastday")]
-        public List<ForecastDayApiData>? ForecastDays { get; set; }
+        public IReadOnlyCollection<ForecastDayApiData>? ForecastDays { get; set; }
     }
 }

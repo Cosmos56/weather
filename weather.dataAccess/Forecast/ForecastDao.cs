@@ -1,10 +1,9 @@
 ﻿using Weather.DataAccess.Abstractions.Forecast;
 using Weather.DataAccess.Abstractions.Forecast.Models;
-using Weather.DataAccess.Forecast;
 using Weather.Infrastructure.DependencyInjection;
 using Weather.Weatherapi.Clients.Abstractoins.Forecast;
 
-namespace weather.dataAccess.Forecast
+namespace Weather.DataAccess.Forecast
 {
     [InjectAsSingleton(typeof(IForecastDao))]
     internal class ForecastDao(IWeatherapiClient weatherapiClient) : IForecastDao

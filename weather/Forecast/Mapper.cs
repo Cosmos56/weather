@@ -7,8 +7,6 @@ namespace Weather.Forecast
     {
         public static ForecastDto ToDto(this ForecastModel domain)
         {
-            if (domain == null) throw new ArgumentNullException(nameof(domain));
-
             return new ForecastDto
             {
                 Location = domain.Location,
@@ -19,8 +17,6 @@ namespace Weather.Forecast
 
         private static DailyForecastDto ToDto(this DailyForecastModel domain)
         {
-            if (domain == null) throw new ArgumentNullException(nameof(domain));
-
             return new DailyForecastDto
             {
                 Date = domain.Date,
@@ -34,8 +30,6 @@ namespace Weather.Forecast
 
         private static HourlyForecastDto ToDto(this HourlyForecastModel domain)
         {
-            if (domain == null) throw new ArgumentNullException(nameof(domain));
-
             return new HourlyForecastDto
             {
                 Time = domain.Time,

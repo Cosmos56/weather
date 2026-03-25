@@ -1,7 +1,4 @@
-﻿
-using Microsoft.VisualBasic;
-using System.Globalization;
-using Weather.DataAccess.Abstractions.Forecast.Models;
+﻿using Weather.DataAccess.Abstractions.Forecast.Models;
 using Weather.Weatherapi.Clients.Abstractoins.Forecast.Models;
 
 namespace Weather.DataAccess.Forecast
@@ -11,11 +8,11 @@ namespace Weather.DataAccess.Forecast
         public static ForecastDaoModel ToDaoModel(this WeatherForecastResponseApiData? apiData)
         {
             if (apiData == null)
-                throw new Exception("Нет данных.");
+                throw new Exception("No data");
 
             return new ForecastDaoModel
             { 
-                Location = apiData.Location?.Name ?? throw new Exception("Наименование местоположения пусто"),
+                Location = apiData.Location?.Name ?? throw new Exception("Location is empty"),
                 Daily = apiData.ToDaily()
             };
         }
@@ -28,17 +25,19 @@ namespace Weather.DataAccess.Forecast
                 throw new Exception("ForecastDays is empty.");
 
             if (!DateTime.TryParse(apiData.Current?.LastUpdated, out var currentDate))
-                throw new Exception("LastUpdated TryParse error.");
+                throw new Exception("Current LastUpdated TryParse error.");
 
             foreach (var dayData in apiData.Forecast.ForecastDays)
             {
                 if (!DateTime.TryParse(dayData.Date, out var date))
-                    throw new Exception("LastUpdated TryParse error.");
+                    throw new Exception("Date TryParse error.");
 
                 var daily = new DailyForecastDaoModel
                 {
                     Date = DateOnly.FromDateTime(date),
-                    Temperature = Convert.ToInt32(dayData.Day?.AvgTempCelsius ?? throw new Exception("Day AvgTempCelsius is empty")) ,
+                    Temperature = date.Day == currentDate.Day 
+                        ? Convert.ToInt32(apiData.Current?.TemperatureCelsius ?? throw new Exception("Day Current TemperatureCelsius is empty")) 
+                        : Convert.ToInt32(dayData.Day?.AvgTempCelsius ?? throw new Exception("Day AvgTempCelsius is empty")) ,
                     FeelsLike = date.Day == currentDate.Day ? Convert.ToInt32(apiData.Current?.FeelsLikeCelsius) : null,
                     Condition = dayData.Day.Condition?.Text ?? throw new Exception("Day Condition is empty"),
                     Hourly = dayData.Hourly?.Select(ToHourly).ToList() ?? throw new Exception("Day Hourly is empty")

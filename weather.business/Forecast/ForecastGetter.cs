@@ -1,5 +1,4 @@
-﻿using System.Net.WebSockets;
-using Weather.Business.Abstractions.Forecast;
+﻿using Weather.Business.Abstractions.Forecast;
 using Weather.Business.Abstractions.Forecast.Models;
 using Weather.DataAccess.Abstractions.Forecast;
 using Weather.Infrastructure.DependencyInjection;

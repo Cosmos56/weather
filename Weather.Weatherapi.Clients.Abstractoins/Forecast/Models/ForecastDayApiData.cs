@@ -20,6 +20,6 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
         public AstronomyApiData? Astronomy { get; set; }
 
         [JsonProperty("hour")]
-        public List<HourlyForecastApiData>? Hourly { get; set; }
+        public IReadOnlyCollection<HourlyForecastApiData>? Hourly { get; set; }
     }
 }

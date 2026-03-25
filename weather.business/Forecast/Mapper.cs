@@ -8,9 +8,6 @@ namespace Weather.Business.Forecast
     {
         public static ForecastModel ToModel(this ForecastDaoModel? dao)
         {
-            if (dao == null)
-                return null!;
-
             return new ForecastModel
             {
                 Location = dao.Location,
@@ -21,9 +18,6 @@ namespace Weather.Business.Forecast
 
         private static DailyForecastModel ToModel(this DailyForecastDaoModel? dao)
         {
-            if (dao == null)
-                return null!;
-
             return new DailyForecastModel
             {
                 Date = dao.Date,
@@ -37,9 +31,6 @@ namespace Weather.Business.Forecast
 
         private static HourlyForecastModel ToModel(this HourlyForecastDaoModel? dao)
         {
-            if (dao == null)
-                return null!;
-
             return new HourlyForecastModel
             {
                 Time = dao.Time,
