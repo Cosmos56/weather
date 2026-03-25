@@ -5,7 +5,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Астрономические данные (восход/закат)
     /// </summary>
-    public class Astronomy
+    public class AstronomyApiData
     {
         [JsonPropertyName("sunrise")]
         public string? Sunrise { get; set; }

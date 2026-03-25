@@ -5,7 +5,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Информация о локации
     /// </summary>
-    public class Location
+    public class LocationApiData
     {
         [JsonPropertyName("name")]
         public string? Name { get; set; }

@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\weather.dataAccess.abstractions\Weather.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Weather.Infrastructure.DependencyInjection\Weather.Infrastructure.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Weather.Weatherapi.Clients.Abstractoins\Weather.Weatherapi.Clients.Abstractoins.csproj" />
+  </ItemGroup>
+
 </Project>

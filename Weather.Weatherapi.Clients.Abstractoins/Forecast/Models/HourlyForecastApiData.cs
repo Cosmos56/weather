@@ -5,7 +5,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Почасовой прогноз
     /// </summary>
-    public class HourlyForecast
+    public class HourlyForecastApiData
     {
         [JsonPropertyName("time_epoch")]
         public long TimeEpoch { get; set; }
@@ -23,7 +23,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
         public int IsDay { get; set; }
 
         [JsonPropertyName("condition")]
-        public WeatherCondition? Condition { get; set; }
+        public WeatherConditionApiData? Condition { get; set; }
 
         [JsonPropertyName("wind_mph")]
         public decimal WindMph { get; set; }

@@ -10,7 +10,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Текущие погодные условия
     /// </summary>
-    public class CurrentWeather
+    public class CurrentWeatherApiData
     {
         [JsonPropertyName("last_updated_epoch")]
         public long LastUpdatedEpoch { get; set; }
@@ -28,7 +28,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
         public int IsDay { get; set; }
 
         [JsonPropertyName("condition")]
-        public WeatherCondition? Condition { get; set; }
+        public WeatherConditionApiData? Condition { get; set; }
 
         [JsonPropertyName("wind_mph")]
         public decimal WindMph { get; set; }

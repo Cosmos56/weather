@@ -3,7 +3,7 @@
 namespace Weather.Weatherapi.Clients
 {
     [InjectAsSingleton(typeof(WebClient))]
-    public class WebClient(HttpClient httpClient)
+    internal class WebClient(HttpClient httpClient)
     {
         public async Task<string> GetAsync(string url, CancellationToken cancellationToken)
         {

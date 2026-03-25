@@ -4,6 +4,6 @@ namespace Weather.Business.Abstractions.Forecast
 {
     public interface IForecastGetter
     {
-        Task<ForecastModel> GetAsync();
+        Task<ForecastModel> GetForecast(int dayCount, double lat, double lon, CancellationToken cancellationToken);
     }
 }

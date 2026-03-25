@@ -5,15 +5,15 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Корневой объект ответа WeatherAPI Forecast
     /// </summary>
-    public class WeatherForecastResponse
+    public class WeatherForecastResponseApiData
     {
         [JsonPropertyName("location")]
-        public Location? Location { get; set; }
+        public LocationApiData? Location { get; set; }
 
         [JsonPropertyName("current")]
-        public CurrentWeather? Current { get; set; }
+        public CurrentWeatherApiData? Current { get; set; }
 
         [JsonPropertyName("forecast")]
-        public Forecast? Forecast { get; set; }
+        public ForecastApiData? Forecast { get; set; }
     }
 }

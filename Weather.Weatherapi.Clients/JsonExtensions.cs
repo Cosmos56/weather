@@ -2,7 +2,7 @@
 
 namespace Weather.Weatherapi.Clients
 {
-    public static class JsonExtensions
+    internal static class JsonExtensions
     {
         public static string ToJsonString(this object obj)
         {

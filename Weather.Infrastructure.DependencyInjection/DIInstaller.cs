@@ -1,5 +1,6 @@
-﻿using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System.Net;
+using System.Reflection;
 
 namespace Weather.Infrastructure.DependencyInjection;
 

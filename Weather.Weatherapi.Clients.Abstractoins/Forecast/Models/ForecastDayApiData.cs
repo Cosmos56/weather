@@ -5,7 +5,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Прогноз на один день
     /// </summary>
-    public class ForecastDay
+    public class ForecastDayApiData
     {
         [JsonPropertyName("date")]
         public string? Date { get; set; }
@@ -14,12 +14,12 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
         public long DateEpoch { get; set; }
 
         [JsonPropertyName("day")]
-        public DayForecast? Day { get; set; }
+        public DayForecastApiData? Day { get; set; }
 
         [JsonPropertyName("astro")]
-        public Astronomy? Astronomy { get; set; }
+        public AstronomyApiData? Astronomy { get; set; }
 
         [JsonPropertyName("hour")]
-        public List<HourlyForecast>? Hourly { get; set; }
+        public List<HourlyForecastApiData>? Hourly { get; set; }
     }
 }

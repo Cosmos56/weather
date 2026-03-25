@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\weather.business.Abstractions\Weather.Business.Abstractions.csproj" />
+    <ProjectReference Include="..\weather.dataAccess.abstractions\Weather.DataAccess.Abstractions.csproj" />
     <ProjectReference Include="..\Weather.Infrastructure.DependencyInjection\Weather.Infrastructure.DependencyInjection.csproj" />
   </ItemGroup>
 

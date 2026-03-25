@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -9,8 +9,10 @@
   <ItemGroup>
     <ProjectReference Include="..\weather.business.Abstractions\Weather.Business.Abstractions.csproj" />
     <ProjectReference Include="..\weather.business\Weather.Business.csproj" />
+    <ProjectReference Include="..\weather.dataAccess\Weather.DataAccess.csproj" />
     <ProjectReference Include="..\Weather.Infrastructure.AspNetCore\Weather.Infrastructure.AspNetCore.csproj" />
     <ProjectReference Include="..\Weather.Infrastructure.DependencyInjection\Weather.Infrastructure.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Weather.Weatherapi.Clients\Weather.Weatherapi.Clients.csproj" />
   </ItemGroup>
 
 </Project>

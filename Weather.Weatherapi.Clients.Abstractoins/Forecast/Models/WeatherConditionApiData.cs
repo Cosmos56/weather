@@ -5,7 +5,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Погодное условие (текст, иконка, код)
     /// </summary>
-    public class WeatherCondition
+    public class WeatherConditionApiData
     {
         [JsonPropertyName("text")]
         public string? Text { get; set; }

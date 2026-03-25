@@ -15,9 +15,9 @@ namespace Weather.Forecast
         /// <param name="lon">долгота, по умолчанию Москва</param>
         /// <returns></returns>
         [HttpGet("days")]
-        public async Task<IActionResult> GetDaysForecast(int dayCount, double lat = 55.75, double lon = 37.61)
+        public async Task<IActionResult> GetDaysForecast(int dayCount, double lat = 55.75, double lon = 37.61, CancellationToken cancellationToken = default)
         {
-            var result = await getter.GetAsync();
+            var result = await getter.GetForecast(dayCount, lat, lon, cancellationToken);
             return Ok(result.ToDto());
         }
     }

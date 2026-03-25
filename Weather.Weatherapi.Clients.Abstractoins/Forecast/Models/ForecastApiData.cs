@@ -5,9 +5,9 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Прогноз погоды
     /// </summary>
-    public class Forecast
+    public class ForecastApiData
     {
         [JsonPropertyName("forecastday")]
-        public List<ForecastDay>? ForecastDays { get; set; }
+        public List<ForecastDayApiData>? ForecastDays { get; set; }
     }
 }

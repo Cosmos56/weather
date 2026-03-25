@@ -5,7 +5,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// <summary>
     /// Сводка погоды за день
     /// </summary>
-    public class DayForecast
+    public class DayForecastApiData
     {
         [JsonPropertyName("maxtemp_c")]
         public decimal MaxTempCelsius { get; set; }
@@ -62,7 +62,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
         public int DailyChanceOfSnow { get; set; }
 
         [JsonPropertyName("condition")]
-        public WeatherCondition? Condition { get; set; }
+        public WeatherConditionApiData? Condition { get; set; }
 
         [JsonPropertyName("uv")]
         public decimal UvIndex { get; set; }
