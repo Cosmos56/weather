@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
 {
@@ -7,106 +7,106 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// </summary>
     public class HourlyForecastApiData
     {
-        [JsonPropertyName("time_epoch")]
+        [JsonProperty("time_epoch")]
         public long TimeEpoch { get; set; }
 
-        [JsonPropertyName("time")]
+        [JsonProperty("time")]
         public string? Time { get; set; }
 
-        [JsonPropertyName("temp_c")]
+        [JsonProperty("temp_c")]
         public decimal TemperatureCelsius { get; set; }
 
-        [JsonPropertyName("temp_f")]
+        [JsonProperty("temp_f")]
         public decimal TemperatureFahrenheit { get; set; }
 
-        [JsonPropertyName("is_day")]
+        [JsonProperty("is_day")]
         public int IsDay { get; set; }
 
-        [JsonPropertyName("condition")]
+        [JsonProperty("condition")]
         public WeatherConditionApiData? Condition { get; set; }
 
-        [JsonPropertyName("wind_mph")]
+        [JsonProperty("wind_mph")]
         public decimal WindMph { get; set; }
 
-        [JsonPropertyName("wind_kph")]
+        [JsonProperty("wind_kph")]
         public decimal WindKph { get; set; }
 
-        [JsonPropertyName("wind_degree")]
+        [JsonProperty("wind_degree")]
         public int WindDegree { get; set; }
 
-        [JsonPropertyName("wind_dir")]
+        [JsonProperty("wind_dir")]
         public string? WindDirection { get; set; }
 
-        [JsonPropertyName("pressure_mb")]
+        [JsonProperty("pressure_mb")]
         public decimal PressureMb { get; set; }
 
-        [JsonPropertyName("pressure_in")]
+        [JsonProperty("pressure_in")]
         public decimal PressureIn { get; set; }
 
-        [JsonPropertyName("precip_mm")]
+        [JsonProperty("precip_mm")]
         public decimal PrecipMm { get; set; }
 
-        [JsonPropertyName("precip_in")]
+        [JsonProperty("precip_in")]
         public decimal PrecipIn { get; set; }
 
-        [JsonPropertyName("snow_cm")]
+        [JsonProperty("snow_cm")]
         public decimal SnowCm { get; set; }
 
-        [JsonPropertyName("humidity")]
+        [JsonProperty("humidity")]
         public int Humidity { get; set; }
 
-        [JsonPropertyName("cloud")]
+        [JsonProperty("cloud")]
         public int Cloud { get; set; }
 
-        [JsonPropertyName("feelslike_c")]
+        [JsonProperty("feelslike_c")]
         public decimal FeelsLikeCelsius { get; set; }
 
-        [JsonPropertyName("feelslike_f")]
+        [JsonProperty("feelslike_f")]
         public decimal FeelsLikeFahrenheit { get; set; }
 
-        [JsonPropertyName("windchill_c")]
+        [JsonProperty("windchill_c")]
         public decimal WindChillCelsius { get; set; }
 
-        [JsonPropertyName("windchill_f")]
+        [JsonProperty("windchill_f")]
         public decimal WindChillFahrenheit { get; set; }
 
-        [JsonPropertyName("heatindex_c")]
+        [JsonProperty("heatindex_c")]
         public decimal HeatIndexCelsius { get; set; }
 
-        [JsonPropertyName("heatindex_f")]
+        [JsonProperty("heatindex_f")]
         public decimal HeatIndexFahrenheit { get; set; }
 
-        [JsonPropertyName("dewpoint_c")]
+        [JsonProperty("dewpoint_c")]
         public decimal DewPointCelsius { get; set; }
 
-        [JsonPropertyName("dewpoint_f")]
+        [JsonProperty("dewpoint_f")]
         public decimal DewPointFahrenheit { get; set; }
 
-        [JsonPropertyName("will_it_rain")]
+        [JsonProperty("will_it_rain")]
         public int WillItRain { get; set; }
 
-        [JsonPropertyName("chance_of_rain")]
+        [JsonProperty("chance_of_rain")]
         public int ChanceOfRain { get; set; }
 
-        [JsonPropertyName("will_it_snow")]
+        [JsonProperty("will_it_snow")]
         public int WillItSnow { get; set; }
 
-        [JsonPropertyName("chance_of_snow")]
+        [JsonProperty("chance_of_snow")]
         public int ChanceOfSnow { get; set; }
 
-        [JsonPropertyName("vis_km")]
+        [JsonProperty("vis_km")]
         public decimal VisibilityKm { get; set; }
 
-        [JsonPropertyName("vis_miles")]
+        [JsonProperty("vis_miles")]
         public decimal VisibilityMiles { get; set; }
 
-        [JsonPropertyName("gust_mph")]
+        [JsonProperty("gust_mph")]
         public decimal GustMph { get; set; }
 
-        [JsonPropertyName("gust_kph")]
+        [JsonProperty("gust_kph")]
         public decimal GustKph { get; set; }
 
-        [JsonPropertyName("uv")]
+        [JsonProperty("uv")]
         public decimal UvIndex { get; set; }
     }
 }

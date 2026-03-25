@@ -18,7 +18,7 @@ namespace weather.Forecast.Dto
         /// <summary>
         /// Ощущается как
         /// </summary>
-        public int FeelsLike { get; set; }
+        public int? FeelsLike { get; set; }
 
         /// <summary>
         /// Погодные условия

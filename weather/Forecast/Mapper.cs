@@ -17,7 +17,7 @@ namespace Weather.Forecast
             };
         }
 
-        public static DailyForecastDto ToDto(this DailyForecastModel domain)
+        private static DailyForecastDto ToDto(this DailyForecastModel domain)
         {
             if (domain == null) throw new ArgumentNullException(nameof(domain));
 
@@ -32,7 +32,7 @@ namespace Weather.Forecast
             };
         }
 
-        public static HourlyForecastDto ToDto(this HourlyForecastModel domain)
+        private static HourlyForecastDto ToDto(this HourlyForecastModel domain)
         {
             if (domain == null) throw new ArgumentNullException(nameof(domain));
 

@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
 {
@@ -7,19 +7,19 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// </summary>
     public class ForecastDayApiData
     {
-        [JsonPropertyName("date")]
+        [JsonProperty("date")]
         public string? Date { get; set; }
 
-        [JsonPropertyName("date_epoch")]
+        [JsonProperty("date_epoch")]
         public long DateEpoch { get; set; }
 
-        [JsonPropertyName("day")]
+        [JsonProperty("day")]
         public DayForecastApiData? Day { get; set; }
 
-        [JsonPropertyName("astro")]
+        [JsonProperty("astro")]
         public AstronomyApiData? Astronomy { get; set; }
 
-        [JsonPropertyName("hour")]
+        [JsonProperty("hour")]
         public List<HourlyForecastApiData>? Hourly { get; set; }
     }
 }

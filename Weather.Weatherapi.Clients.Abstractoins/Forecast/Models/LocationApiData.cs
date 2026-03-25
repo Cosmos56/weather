@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
 {
@@ -7,28 +7,28 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// </summary>
     public class LocationApiData
     {
-        [JsonPropertyName("name")]
+        [JsonProperty("name")]
         public string? Name { get; set; }
 
-        [JsonPropertyName("region")]
+        [JsonProperty("region")]
         public string? Region { get; set; }
 
-        [JsonPropertyName("country")]
+        [JsonProperty("country")]
         public string? Country { get; set; }
 
-        [JsonPropertyName("lat")]
+        [JsonProperty("lat")]
         public decimal Latitude { get; set; }
 
-        [JsonPropertyName("lon")]
+        [JsonProperty("lon")]
         public decimal Longitude { get; set; }
 
-        [JsonPropertyName("tz_id")]
+        [JsonProperty("tz_id")]
         public string? TimeZoneId { get; set; }
 
-        [JsonPropertyName("localtime_epoch")]
+        [JsonProperty("localtime_epoch")]
         public long LocalTimeEpoch { get; set; }
 
-        [JsonPropertyName("localtime")]
+        [JsonProperty("localtime")]
         public string? LocalTime { get; set; }
     }
 }

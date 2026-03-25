@@ -11,7 +11,7 @@ namespace Weather.Infrastructure.AspNetCore.Extensions
             return app.Map(
                 "/ping",
                 applicationBuilder => applicationBuilder
-                    .Run(async httpContext => await httpContext.Response.WriteAsync("pong").ConfigureAwait(false)));
+                    .Run(async httpContext => await httpContext.Response.WriteAsync("For test use /api/forecast/days?daycount=1").ConfigureAwait(false)));
         }
 
         public static IApplicationBuilder UseStartRedirect(this IApplicationBuilder app)

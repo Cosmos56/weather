@@ -12,9 +12,10 @@ namespace Weather.Weatherapi.Clients.Forecast
         public async Task<WeatherForecastResponseApiData> GetForecast(int dayCount, double lat, double lon, CancellationToken cancellationToken)
         {
             const string Method = "/v1/forecast.json";
-            var paramtrs = $"?lang=ru&days={dayCount}&q={lat},{lon}key={Key}";
+            var paramtrs = $"?lang=ru&days={dayCount}&q={lat.ToString().Replace(",", ".")},{lon.ToString().Replace(",", ".")}&key={Key}";
             var response = await webClient.GetAsync($"{Host+Method+paramtrs}", cancellationToken);
-            return response.FromJsonString<WeatherForecastResponseApiData>();
+            var result = response.FromJsonString<WeatherForecastResponseApiData>();
+            return result;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
 {
@@ -7,7 +7,7 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// </summary>
     public class ForecastApiData
     {
-        [JsonPropertyName("forecastday")]
+        [JsonProperty("forecastday")]
         public List<ForecastDayApiData>? ForecastDays { get; set; }
     }
 }

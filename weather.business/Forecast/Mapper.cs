@@ -19,7 +19,7 @@ namespace Weather.Business.Forecast
             };
         }
 
-        public static DailyForecastModel ToModel(this DailyForecastDaoModel? dao)
+        private static DailyForecastModel ToModel(this DailyForecastDaoModel? dao)
         {
             if (dao == null)
                 return null!;
@@ -35,7 +35,7 @@ namespace Weather.Business.Forecast
             };
         }
 
-        public static HourlyForecastModel ToModel(this HourlyForecastDaoModel? dao)
+        private static HourlyForecastModel ToModel(this HourlyForecastDaoModel? dao)
         {
             if (dao == null)
                 return null!;

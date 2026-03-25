@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
 {
@@ -7,64 +7,64 @@ namespace Weather.Weatherapi.Clients.Abstractoins.Forecast.Models
     /// </summary>
     public class DayForecastApiData
     {
-        [JsonPropertyName("maxtemp_c")]
+        [JsonProperty("maxtemp_c")]
         public decimal MaxTempCelsius { get; set; }
 
-        [JsonPropertyName("maxtemp_f")]
+        [JsonProperty("maxtemp_f")]
         public decimal MaxTempFahrenheit { get; set; }
 
-        [JsonPropertyName("mintemp_c")]
+        [JsonProperty("mintemp_c")]
         public decimal MinTempCelsius { get; set; }
 
-        [JsonPropertyName("mintemp_f")]
+        [JsonProperty("mintemp_f")]
         public decimal MinTempFahrenheit { get; set; }
 
-        [JsonPropertyName("avgtemp_c")]
+        [JsonProperty("avgtemp_c")]
         public decimal AvgTempCelsius { get; set; }
 
-        [JsonPropertyName("avgtemp_f")]
+        [JsonProperty("avgtemp_f")]
         public decimal AvgTempFahrenheit { get; set; }
 
-        [JsonPropertyName("maxwind_mph")]
+        [JsonProperty("maxwind_mph")]
         public decimal MaxWindMph { get; set; }
 
-        [JsonPropertyName("maxwind_kph")]
+        [JsonProperty("maxwind_kph")]
         public decimal MaxWindKph { get; set; }
 
-        [JsonPropertyName("totalprecip_mm")]
+        [JsonProperty("totalprecip_mm")]
         public decimal TotalPrecipMm { get; set; }
 
-        [JsonPropertyName("totalprecip_in")]
+        [JsonProperty("totalprecip_in")]
         public decimal TotalPrecipIn { get; set; }
 
-        [JsonPropertyName("totalsnow_cm")]
+        [JsonProperty("totalsnow_cm")]
         public decimal TotalSnowCm { get; set; }
 
-        [JsonPropertyName("avgvis_km")]
+        [JsonProperty("avgvis_km")]
         public decimal AvgVisibilityKm { get; set; }
 
-        [JsonPropertyName("avgvis_miles")]
+        [JsonProperty("avgvis_miles")]
         public decimal AvgVisibilityMiles { get; set; }
 
-        [JsonPropertyName("avghumidity")]
+        [JsonProperty("avghumidity")]
         public int AvgHumidity { get; set; }
 
-        [JsonPropertyName("daily_will_it_rain")]
+        [JsonProperty("daily_will_it_rain")]
         public int DailyWillItRain { get; set; }
 
-        [JsonPropertyName("daily_chance_of_rain")]
+        [JsonProperty("daily_chance_of_rain")]
         public int DailyChanceOfRain { get; set; }
 
-        [JsonPropertyName("daily_will_it_snow")]
+        [JsonProperty("daily_will_it_snow")]
         public int DailyWillItSnow { get; set; }
 
-        [JsonPropertyName("daily_chance_of_snow")]
+        [JsonProperty("daily_chance_of_snow")]
         public int DailyChanceOfSnow { get; set; }
 
-        [JsonPropertyName("condition")]
+        [JsonProperty("condition")]
         public WeatherConditionApiData? Condition { get; set; }
 
-        [JsonPropertyName("uv")]
+        [JsonProperty("uv")]
         public decimal UvIndex { get; set; }
     }
 }
