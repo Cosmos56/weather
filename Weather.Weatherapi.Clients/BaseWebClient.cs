@@ -2,21 +2,18 @@
 
 namespace Weather.Weatherapi.Clients
 {
-    [InjectAsSingleton(typeof(WebClient))]
-    internal class WebClient(HttpClient httpClient)
+    [InjectAsTransient(typeof(BaseWebClient))]
+    public class BaseWebClient(HttpClient httpClient)
     {
         public async Task<string> GetAsync(string url, CancellationToken cancellationToken)
         {
-            using var request = new HttpRequestMessage(HttpMethod.Get, url);
-            using var responseMessage = await httpClient.SendAsync(request, cancellationToken: cancellationToken);
+            using var responseMessage = await httpClient.GetAsync(url, cancellationToken: cancellationToken);
             var response = await responseMessage.Content.ReadAsStringAsync(cancellationToken);
             if (responseMessage.IsSuccessStatusCode)
-            {
                 return response;
-            }
 
             var requestPartWithoutKey = url.Split("key")[0];
-            throw new HttpRequestException($"Ошибка в {nameof(GetAsync)}. " +
+            throw new HttpRequestException($"Ошибка в {nameof(BaseWebClient)}.{nameof(GetAsync)}. " +
                                            $"HTTP STATUS CODE: {(int)responseMessage.StatusCode} {responseMessage.StatusCode}. " +
                                            $"REQUEST:{requestPartWithoutKey}. " +
                                            $"RESPONSE:{response}.");

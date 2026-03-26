@@ -74,6 +74,7 @@ internal class DIInstaller
         return attr.Lifetime switch
         {
             InjectionLifetime.Singleton => ServiceLifetime.Singleton,
+            InjectionLifetime.Transient => ServiceLifetime.Transient,
             _ => throw new ArgumentOutOfRangeException()
         };
     }

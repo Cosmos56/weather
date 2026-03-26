@@ -1,25 +1,27 @@
-using System.Net;
 using Weather.Infrastructure.AspNetCore.Extensions;
 using Weather.Infrastructure.DependencyInjection;
+using Weather.Weatherapi.Clients;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddHttpClient<WebClient>(client =>
-{
-    client.Timeout = TimeSpan.FromSeconds(30);
-});
-
 // регистрация DI контейнера по атрибутам
 builder.Services.RegisterByDIAttribute("Weather.*");
+
+builder.Services.AddHttpClient<BaseWebClient>(client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(20);
+});
 
 var app = builder.Build();
 
 app.UseStartRedirect();
 
 app.UsePing();
+
+app.UseDefaultCors();
 
 app.UseHttpsRedirection();
 

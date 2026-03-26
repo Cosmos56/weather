@@ -31,5 +31,10 @@ namespace Weather.Infrastructure.AspNetCore.Extensions
         {
             return app.UseMiddleware<ExceptionHandlerMiddleware>();
         }
+
+        public static IApplicationBuilder UseDefaultCors(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<CorsMiddleware>();
+        }
     }
 }

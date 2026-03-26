@@ -24,4 +24,13 @@ namespace Weather.Infrastructure.DependencyInjection
         }
         
     }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    public class InjectAsTransientAttribute : InjectAttribute
+    {
+        public InjectAsTransientAttribute(Type abstractType) : base(InjectionLifetime.Transient, abstractType)
+        {
+        }
+
+    }
 }
