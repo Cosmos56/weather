@@ -6,7 +6,7 @@ namespace Weather.Business.Forecast
 {
     internal static class Mapper
     {
-        public static ForecastModel ToModel(this ForecastDaoModel? dao)
+        public static ForecastModel ToModel(this ForecastDaoModel dao)
         {
             return new ForecastModel
             {
@@ -16,26 +16,35 @@ namespace Weather.Business.Forecast
             };
         }
 
-        private static DailyForecastModel ToModel(this DailyForecastDaoModel? dao)
+        private static DailyForecastModel ToModel(this DailyForecastDaoModel dao)
         {
             return new DailyForecastModel
             {
                 Date = dao.Date,
                 Temperature = dao.Temperature,
                 FeelsLike = dao.FeelsLike,
-                Condition = dao.Condition,
+                Condition = dao.Condition.ToModel(),
                 Hourly = dao.Hourly?.Select(h => h.ToModel()).ToArray()
                     ?? Array.Empty<HourlyForecastModel>()
             };
         }
 
-        private static HourlyForecastModel ToModel(this HourlyForecastDaoModel? dao)
+        private static HourlyForecastModel ToModel(this HourlyForecastDaoModel dao)
         {
             return new HourlyForecastModel
             {
                 Time = dao.Time,
                 Temperature = dao.Temperature,
-                Condition = dao.Condition
+                Condition = dao.Condition.ToModel()
+            };
+        }
+
+        private static ConditionDataModel ToModel(this ConditionDataDaoModel dao)
+        {
+            return new ConditionDataModel
+            {
+                Text = dao.Text,
+                Icon = dao.Icon
             };
         }
     }

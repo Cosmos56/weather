@@ -18,6 +18,6 @@ namespace Weather.Business.Abstractions.Forecast.Models
         /// <summary>
         /// Погодные условия
         /// </summary>
-        public string Condition { get; init; }
+        public ConditionDataModel Condition { get; init; }
     }
 }

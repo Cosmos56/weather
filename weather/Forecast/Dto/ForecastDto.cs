@@ -1,4 +1,4 @@
-namespace weather.Forecast.Dto
+namespace Weather.Forecast.Dto
 {
     /// <summary>
     /// Данные о прогнозе погоды

@@ -1,4 +1,4 @@
-﻿using weather.Forecast.Dto;
+﻿using Weather.Forecast.Dto;
 using Weather.Business.Abstractions.Forecast.Models;
 
 namespace Weather.Forecast
@@ -22,7 +22,7 @@ namespace Weather.Forecast
                 Date = domain.Date,
                 Temperature = domain.Temperature,
                 FeelsLike = domain.FeelsLike,
-                Condition = domain.Condition,
+                Condition = domain.Condition.ToDto(),
                 Hourly = domain.Hourly?.Select(h => h.ToDto()).ToList()
                     ?? new List<HourlyForecastDto>()
             };
@@ -34,7 +34,16 @@ namespace Weather.Forecast
             {
                 Time = domain.Time,
                 Temperature = domain.Temperature,
-                Condition = domain.Condition
+                Condition = domain.Condition.ToDto()
+            };
+        }
+
+        private static ConditionDto ToDto(this ConditionDataModel domain)
+        {
+            return new ConditionDto
+            {
+                Text = domain.Text,
+                Icon = domain.Icon
             };
         }
     }

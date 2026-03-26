@@ -1,4 +1,4 @@
-namespace weather.Forecast.Dto
+namespace Weather.Forecast.Dto
 {
     /// <summary>
     /// Прогноз по часам
@@ -18,6 +18,6 @@ namespace weather.Forecast.Dto
         /// <summary>
         /// Погодные условия
         /// </summary>
-        public string Condition { get; set; }
+        public ConditionDto Condition { get; set; }
     }
 }

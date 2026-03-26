@@ -39,7 +39,11 @@ namespace Weather.DataAccess.Forecast
                         ? Convert.ToInt32(apiData.Current?.TemperatureCelsius ?? throw new Exception("Day Current TemperatureCelsius is empty")) 
                         : Convert.ToInt32(dayData.Day?.AvgTempCelsius ?? throw new Exception("Day AvgTempCelsius is empty")) ,
                     FeelsLike = date.Day == currentDate.Day ? Convert.ToInt32(apiData.Current?.FeelsLikeCelsius) : null,
-                    Condition = dayData.Day.Condition?.Text ?? throw new Exception("Day Condition is empty"),
+                    Condition = new ConditionDataDaoModel 
+                        { 
+                            Text = dayData.Day.Condition?.Text ?? throw new Exception("Day Condition is empty"), 
+                            Icon = dayData.Day.Condition?.IconUrl ?? throw new Exception("Day Condition Icon is empty")
+                        },
                     Hourly = dayData.Hourly?.Select(ToHourly).ToList() ?? throw new Exception("Day Hourly is empty")
                 };
                 result.Add(daily);
@@ -59,7 +63,11 @@ namespace Weather.DataAccess.Forecast
             {
                 Time = TimeOnly.FromDateTime(currentDate),
                 Temperature = Convert.ToInt32(hourlyData.TemperatureCelsius),
-                Condition = hourlyData.Condition?.Text ?? throw new Exception("hourlyData Condition is empty")
+                Condition = new ConditionDataDaoModel
+                {
+                    Text = hourlyData.Condition?.Text ?? throw new Exception("hourlyData Condition is empty"),
+                    Icon = hourlyData.Condition?.IconUrl ?? throw new Exception("hourlyData Condition Icon is empty")
+                },
             };
         }
     }
