@@ -1,5 +1,6 @@
 using Weather.Infrastructure.AspNetCore.Extensions;
 using Weather.Infrastructure.DependencyInjection;
+using Weather.Infrastructure.Logging;
 using Weather.Weatherapi.Clients;
 
 
@@ -18,7 +19,9 @@ builder.Services
     .ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler
     {
         AutomaticDecompression = System.Net.DecompressionMethods.All,
-    }); ;
+    });
+
+builder.Logging.AddProvider(new FileLoggerProvider("logs/app.log"));
 
 var app = builder.Build();
 

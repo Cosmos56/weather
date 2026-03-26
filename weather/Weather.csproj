@@ -12,6 +12,7 @@
     <ProjectReference Include="..\weather.dataAccess\Weather.DataAccess.csproj" />
     <ProjectReference Include="..\Weather.Infrastructure.AspNetCore\Weather.Infrastructure.AspNetCore.csproj" />
     <ProjectReference Include="..\Weather.Infrastructure.DependencyInjection\Weather.Infrastructure.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Weather.Infrastructure.Logging\Weather.Infrastructure.Logging.csproj" />
     <ProjectReference Include="..\Weather.Weatherapi.Clients\Weather.Weatherapi.Clients.csproj" />
   </ItemGroup>
 

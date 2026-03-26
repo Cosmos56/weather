@@ -5,7 +5,8 @@ namespace Weather.Forecast
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ForecastController(IForecastGetter getter) : ControllerBase
+    public class ForecastController(IForecastGetter getter, 
+        ILogger<ForecastController> logger) : ControllerBase
     {
         /// <summary>
         /// ѕолучить прогноз за указаное количество дней
@@ -17,6 +18,7 @@ namespace Weather.Forecast
         [HttpGet("days")]
         public async Task<IActionResult> GetDaysForecast(int dayCount, double lat = 55.75, double lon = 37.61, CancellationToken cancellationToken = default)
         {
+            logger.LogInformation($"GetDaysForecast start: dayCount: {dayCount} lat: {lat} lon: {lon}");
             var result = await getter.GetForecast(dayCount, lat, lon, cancellationToken);
             return Ok(result.ToDto());
         }
