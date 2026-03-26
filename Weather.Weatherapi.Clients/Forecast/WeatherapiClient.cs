@@ -8,7 +8,7 @@ namespace Weather.Weatherapi.Clients.Forecast
     internal class WeatherapiClient(BaseWebClient webClient) : IWeatherapiClient
     {
         private const string Key = "fa8b3df74d4042b9aa7135114252304";
-        private const string Host = "http://api.weatherapi.com";
+        private const string Host = "https://api.weatherapi.com";
 
         public async Task<WeatherForecastResponseApiData> GetForecast(int dayCount, double lat, double lon, CancellationToken cancellationToken)
         {
