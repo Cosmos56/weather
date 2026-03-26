@@ -1,13 +1,11 @@
-﻿using Weather.Infrastructure.DependencyInjection;
-
+﻿
 namespace Weather.Weatherapi.Clients
 {
-    [InjectAsTransient(typeof(BaseWebClient))]
     public class BaseWebClient(HttpClient httpClient)
     {
         public async Task<string> GetAsync(string url, CancellationToken cancellationToken)
         {
-            using var responseMessage = await httpClient.GetAsync(url, cancellationToken: cancellationToken);
+            using var responseMessage = await httpClient.GetAsync(url, cancellationToken);
             var response = await responseMessage.Content.ReadAsStringAsync(cancellationToken);
             if (responseMessage.IsSuccessStatusCode)
                 return response;

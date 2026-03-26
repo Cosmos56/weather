@@ -5,7 +5,7 @@ using Weather.Weatherapi.Clients.Abstractoins.Forecast;
 
 namespace Weather.DataAccess.Forecast
 {
-    [InjectAsSingleton(typeof(IForecastDao))]
+    [InjectAsTransient(typeof(IForecastDao))]
     internal class ForecastDao(IWeatherapiClient weatherapiClient) : IForecastDao
     {
         public async Task<ForecastDaoModel> GetForecast(int dayCount, double lat, double lon, CancellationToken cancellationToken)

@@ -4,7 +4,7 @@ using Weather.Weatherapi.Clients.Abstractoins.Forecast.Models;
 
 namespace Weather.Weatherapi.Clients.Forecast
 {
-    [InjectAsSingleton(typeof(IWeatherapiClient))]
+    [InjectAsTransient(typeof(IWeatherapiClient))]
     internal class WeatherapiClient(BaseWebClient webClient) : IWeatherapiClient
     {
         private const string Key = "fa8b3df74d4042b9aa7135114252304";

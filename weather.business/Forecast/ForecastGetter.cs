@@ -5,7 +5,7 @@ using Weather.Infrastructure.DependencyInjection;
 
 namespace Weather.Business.Forecast
 {
-    [InjectAsSingleton(typeof(IForecastGetter))]
+    [InjectAsTransient(typeof(IForecastGetter))]
     internal class ForecastGetter(IForecastDao dao) : IForecastGetter
     {
         public async Task<ForecastModel> GetForecast(int dayCount, double lat, double lon, CancellationToken cancellationToken)

@@ -10,10 +10,15 @@ builder.Services.AddControllers();
 // регистрация DI контейнера по атрибутам
 builder.Services.RegisterByDIAttribute("Weather.*");
 
-builder.Services.AddHttpClient<BaseWebClient>(client =>
-{
-    client.Timeout = TimeSpan.FromSeconds(20);
-});
+builder.Services
+    .AddHttpClient<BaseWebClient>(client =>
+    {
+        client.Timeout = TimeSpan.FromSeconds(15);
+    })
+    .ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler
+    {
+        AutomaticDecompression = System.Net.DecompressionMethods.All,
+    }); ;
 
 var app = builder.Build();
 
