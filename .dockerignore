@@ -1,0 +1,13 @@
+bin
+obj
+.vs
+.vscode
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+logs
+*.log
+.git
+.gitignore
+*.md
