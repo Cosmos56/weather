@@ -15,13 +15,11 @@ namespace Weather.Tests
                 .Select(i => $"Message {i}")
                 .ToList();
 
-            // Act: 10 потоков пишут одновременно
             var tasks = messages.Select(msg =>
                 Task.Run(() => logger.LogInformation(msg)));
 
             await Task.WhenAll(tasks);
 
-            // Assert: все сообщения записаны
             var content = await File.ReadAllTextAsync(tempFile);
             foreach (var msg in messages)
             {
