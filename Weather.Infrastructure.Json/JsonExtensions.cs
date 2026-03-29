@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace Weather.Weatherapi.Clients
+namespace Weather.Infrastructure.Json
 {
-    internal static class JsonExtensions
+    public static class JsonExtensions
     {
         public static string ToJsonString(this object obj)
         {

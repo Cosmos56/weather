@@ -1,7 +1,7 @@
 using Weather.Infrastructure.AspNetCore.Extensions;
 using Weather.Infrastructure.DependencyInjection;
+using Weather.Infrastructure.Http;
 using Weather.Infrastructure.Logging;
-using Weather.Weatherapi.Clients;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,9 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.RegisterByDIAttribute("Weather.*");
 builder.Services
-    .AddHttpClient<BaseWebClient>(client =>
+    .AddHttpClient<WebClientBase>(client =>
     {
-        client.Timeout = TimeSpan.FromSeconds(int.TryParse(builder.Configuration.GetSection("WeatherApi:Timeout").Value, out int timeout) ? timeout : 15);
+        client.Timeout = TimeSpan.FromSeconds(int.TryParse(builder.Configuration.GetSection("WEATHER_API:Timeout").Value, out int timeout) ? timeout : 15);
     })
     .ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler
     {

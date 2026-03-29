@@ -11,15 +11,15 @@ namespace Weather.Forecast
         /// <summary>
         /// ѕолучить прогноз за указаное количество дней
         /// </summary>
-        /// <param name="dayCount">дальность прогноза</param>
+        /// <param name="dayCount">дальность прогноза в дн€х</param>
         /// <param name="lat">широта, по умолчанию ћосква</param>
         /// <param name="lon">долгота, по умолчанию ћосква</param>
         /// <returns></returns>
         [HttpGet("days")]
-        public async Task<IActionResult> GetDaysForecast(int dayCount, double lat = 55.75, double lon = 37.61, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> GetForecastAsync(int dayCount, double lat = 55.75, double lon = 37.61, CancellationToken cancellationToken = default)
         {
             logger.LogInformation($"GetDaysForecast start: dayCount: {dayCount} lat: {lat} lon: {lon}");
-            var result = await getter.GetForecast(dayCount, lat, lon, cancellationToken);
+            var result = await getter.GetForecastAsync(dayCount, lat, lon, cancellationToken);
             return Ok(result.ToDto());
         }
     }

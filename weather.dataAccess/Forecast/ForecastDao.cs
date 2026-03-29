@@ -8,9 +8,9 @@ namespace Weather.DataAccess.Forecast
     [InjectAsTransient(typeof(IForecastDao))]
     internal class ForecastDao(IWeatherapiClient weatherapiClient) : IForecastDao
     {
-        public async Task<ForecastDaoModel> GetForecast(int dayCount, double lat, double lon, CancellationToken cancellationToken)
+        public async Task<ForecastDaoModel> GetForecastAsync(int dayCount, double lat, double lon, CancellationToken cancellationToken)
         {
-            var result = await weatherapiClient.GetForecast(dayCount, lat, lon, cancellationToken);
+            var result = await weatherapiClient.GetForecastAsync(dayCount, lat, lon, cancellationToken);
             return result.ToDaoModel();
         }
     }

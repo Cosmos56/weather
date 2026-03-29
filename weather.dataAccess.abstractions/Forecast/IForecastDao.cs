@@ -4,6 +4,6 @@ namespace Weather.DataAccess.Abstractions.Forecast
 {
     public interface IForecastDao
     {
-        Task<ForecastDaoModel> GetForecast(int dayCount, double lat, double lon, CancellationToken cancellationToken);
+        Task<ForecastDaoModel> GetForecastAsync(int dayCount, double lat, double lon, CancellationToken cancellationToken);
     }
 }
